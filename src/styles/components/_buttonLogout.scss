@@ -1,0 +1,12 @@
+.btn-logout {
+  position: fixed;
+  top: 5rem;
+  right: 5rem;
+}
+
+@media screen and (max-width: 468px) {
+  .btn-logout {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
