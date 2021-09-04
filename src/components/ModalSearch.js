@@ -19,7 +19,6 @@ export const ModalSearch = (props) => {
     dispatch(action);
   };
 
-
   const dispatch = useDispatch();
 
   const state = useSelector((state) => state.search);
@@ -33,7 +32,7 @@ export const ModalSearch = (props) => {
       </Button>
 
       <Modal isOpen={modal} toggle={toggle} className={className}>
-        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+        <ModalHeader toggle={toggle}>Search heroes</ModalHeader>
         <ModalBody>
           <Input />
           <div className="overflow-auto">

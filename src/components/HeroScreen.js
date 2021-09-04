@@ -38,7 +38,6 @@ export const HeroScreen = () => {
                     <li>{alias}</li>
                   ))}
                 </ul>
-
                 <h5>Appearance: </h5>
                 <ul>
                   <li>Gender: {data.appearance.gender}</li>
