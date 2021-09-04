@@ -52,7 +52,7 @@ export const HeroScreen = () => {
                 <p>{data.work.base}</p>
               </div>
               <NavLink
-                class="btn btn-secondary btn-lg btn-block btn-large"
+                className="btn btn-secondary btn-lg btn-block btn-large"
                 exact
                 to="/"
               >

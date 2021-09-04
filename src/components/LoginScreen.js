@@ -14,7 +14,7 @@ export const LoginScreen = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://challenge-react.alkemy.org/", {
+      .post(process.env.REACT_APP_LOGIN_URL, {
         email,
         password,
       })
@@ -64,7 +64,7 @@ export const LoginScreen = () => {
           />
         </FormGroup>
         <button className="btn btn-success">
-          Log in <i class="fas fa-sign-in-alt"></i>
+          Log in <i className="fas fa-sign-in-alt"></i>
         </button>
       </Form>
     </div>
