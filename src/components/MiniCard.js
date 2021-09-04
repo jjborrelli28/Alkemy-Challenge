@@ -14,6 +14,8 @@ export const MiniCard = ({ hero }) => {
 
   console.log(heroes);
 
+  console.log("Render MINICARD")
+
   const handleSelect = (e) => {
     e.preventDefault();
     if (heroes.length < 6) {

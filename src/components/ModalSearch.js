@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import { useFetch } from "../hooks/useFetch";
 import { useFormSearch } from "../hooks/useFormSearch";
 import { types } from "../types/types";
 import { MiniCard } from "./MiniCard";
@@ -11,6 +10,8 @@ import Swal from "sweetalert2";
 export const ModalSearch = (props) => {
   const { className } = props;
   const [modal, setModal] = useState(false);
+
+  console.log("Render MODAL");
 
   const toggle = () => {
     setModal(!modal);
@@ -85,7 +86,12 @@ export const ModalSearch = (props) => {
           </form>
           <div className="overflow-auto">
             {state ? (
-              state.map((hero) => <MiniCard hero={hero} />)
+              state.map(
+                (hero) =>
+                  !heroes.some((elem) => elem === hero) && (
+                    <MiniCard hero={hero} />
+                  )
+              )
             ) : (
               <Spinner />
             )}

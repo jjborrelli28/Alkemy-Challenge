@@ -2,7 +2,7 @@ import React from "react";
 import { Form, FormGroup, Input, Label } from "reactstrap";
 import { useForm } from "../hooks/useForm";
 import Swal from "sweetalert2";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import axios from "axios";
 import { types } from "../types/types";
 
@@ -15,8 +15,8 @@ export const LoginScreen = () => {
     e.preventDefault();
     axios
       .post("http://challenge-react.alkemy.org/", {
-        email: "challenge@alkemy.org",
-        password: "react",
+        email,
+        password,
       })
       .then((response) => {
         const { token } = response.data;
@@ -70,3 +70,8 @@ export const LoginScreen = () => {
     </div>
   );
 };
+
+/*
+User: challenge@alkemy.org
+Pass: react
+*/

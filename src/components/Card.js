@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Tooltip } from "reactstrap";
+import { types } from "../types/types";
 
 export const Card = ({ hero }) => {
   const [tooltipInfoOpen, setTooltipInfoOpen] = useState(false);
@@ -7,14 +9,21 @@ export const Card = ({ hero }) => {
   const [tooltipDeleteOpen, setTooltipDeleteOpen] = useState(false);
   const toggleDelete = () => setTooltipDeleteOpen(!tooltipDeleteOpen);
 
+  const dispatch = useDispatch();
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    const action = {
+      type: types.delete,
+      payload: hero.id,
+    };
+    dispatch(action);
+  };
+
   return (
     <div className="col">
       <div className="card ms-0">
-        <img
-          src={hero.image.url}
-          className="card-img-top"
-          alt="..."
-        />
+        <img src={hero.image.url} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{hero.name}</h5>
           <ul className="ps-0 list">
@@ -48,6 +57,7 @@ export const Card = ({ hero }) => {
               textDecoration: "underline",
             }}
             id="TooltipDelete"
+            onClick={handleDelete}
           >
             <i className="fas fa-trash-alt"></i>
           </button>
