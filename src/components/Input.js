@@ -1,31 +1,34 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 import { useFormSearch } from "../hooks/useFormSearch";
 import { types } from "../types/types";
 
 export const Input = () => {
-  const [values, handleInputChange, reset] = useFormSearch();
+  const [values, handleInputChange] = useFormSearch();
 
   const dispatch = useDispatch();
-
-  const state = useSelector((state) => state.search);
-
-  const { heroes } = useSelector((state) => state);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (values !== "") {
-      const url = `https://superheroapi.com/api.php/2422309994580296/search/${values}`;
-      const response = await fetch(url);
-      console.log(response);
-      const { results } = await response.json();
-      const action = {
-        type: types.search,
-        payload: results,
-      };
-      dispatch(action);
-      console.log(results);
+      try {
+        const url = `https://superheroapi.com/api.php/2422309994580296/search/${values}`;
+        const response = await fetch(url);
+        const { results } = await response.json();
+        const action = {
+          type: types.search,
+          payload: results,
+        };
+        dispatch(action);
+      } catch (error) {
+        Swal.fire({
+          title: "Wrong name",
+          text: "No search results for this name",
+          icon: "warning",
+          confirmButtonText: "Cool",
+        });
+      }
     } else {
       Swal.fire({
         title: "Invalid search",
@@ -35,6 +38,7 @@ export const Input = () => {
       });
     }
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="input-group mb-3">

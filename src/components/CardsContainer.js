@@ -2,10 +2,11 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Card } from "./Card";
 import { EmptyCard } from "./EmptyCard";
+import { Stats } from "./Stats";
 import { TransparentCard } from "./TransparentCard";
 
 export const CardsContainer = () => {
-  const { heroes } = useSelector((state) => state);
+  const { heroes } = useSelector((state) => state.heroes);
 
   return (
     <>
@@ -16,6 +17,7 @@ export const CardsContainer = () => {
           <Card key={hero.id} hero={hero} />
         ))}
       </div>
+      {heroes.length > 0 && <Stats />}
     </>
   );
 };

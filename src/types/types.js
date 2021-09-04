@@ -6,4 +6,6 @@ export const types = {
 
   add: "[Add] Add",
   delete: "[Delete] Delete",
+
+  stats: "[Stats] Stats",
 };

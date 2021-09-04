@@ -21,8 +21,16 @@ export const Card = ({ hero }) => {
   };
 
   return (
-    <div className="col">
-      <div className="card ms-0">
+    <div className="col animate__animated animate__fadeIn animate__slow">
+      <div
+        className={`card ms-0 ${
+          hero.biography.alignment === `good`
+            ? `good`
+            : hero.biography.alignment === `bad`
+            ? `bad`
+            : ``
+        }`}
+      >
         <img src={hero.image.url} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{hero.name}</h5>

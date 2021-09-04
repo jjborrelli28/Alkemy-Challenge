@@ -10,20 +10,47 @@ export const MiniCard = ({ hero }) => {
 
   const dispatch = useDispatch();
 
-  const { heroes } = useSelector((state) => state);
+  const { heroes, good, bad } = useSelector((state) => state.heroes);
 
-  console.log(heroes);
-
-  console.log("Render MINICARD")
+  const alert = () => {
+    Swal.fire({
+      title: "Incorrect selection",
+      text: "You cannot add more than 3 members of with the same orientation",
+      icon: "warning",
+      confirmButtonText: "Cool",
+    });
+  };
 
   const handleSelect = (e) => {
     e.preventDefault();
     if (heroes.length < 6) {
-      const action = {
-        type: types.add,
-        payload: hero,
-      };
-      dispatch(action);
+      if (hero.biography.alignment === "good") {
+        if (good.length < 3) {
+          const action = {
+            type: types.add,
+            payload: hero,
+          };
+          dispatch(action);
+        } else {
+          alert();
+        }
+      } else if (hero.biography.alignment === "bad") {
+        if (bad.length < 3) {
+          const action = {
+            type: types.add,
+            payload: hero,
+          };
+          dispatch(action);
+        } else {
+          alert();
+        }
+      } else {
+        const action = {
+          type: types.add,
+          payload: hero,
+        };
+        dispatch(action);
+      }
     } else {
       Swal.fire({
         title: "Complete team!",
@@ -35,7 +62,15 @@ export const MiniCard = ({ hero }) => {
   };
 
   return (
-    <div className="card mb-3" styleClass="max-width: 100px;">
+    <div
+      className={`card mb-3 animate__animated animate__fadeIn animate__slow ${
+        hero.biography.alignment === `good`
+          ? `good`
+          : hero.biography.alignment === `bad`
+          ? `bad`
+          : ``
+      }`}
+    >
       <div className="row g-0">
         <div className="col-md-4">
           <img

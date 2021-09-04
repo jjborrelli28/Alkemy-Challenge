@@ -5,7 +5,7 @@ export const TransparentCard = () => {
     <div className="col transparent">
       <div className="card ms-0">
         <img
-          src="https://www.superherodb.com/pictures2/portraits/10/100/174.jpg"
+          src="https://www.superherodb.com/pictures2/portraits/10/100/140.jpg"
           className="card-img-top"
           alt="..."
         />

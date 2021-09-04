@@ -4,7 +4,7 @@ import { CardsContainer } from "./CardsContainer";
 
 export const HomeScreen = () => {
   return (
-    <div className="home-screen">
+    <div className="home-screen animate__animated animate__fadeIn animate__slow">
       <div className="jumbotron jumbotron-fluid mt-5">
         <div className="container">
           <h1 className="display-3">
