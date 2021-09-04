@@ -1,6 +1,10 @@
 import { types } from "../types/types";
 
-const initialState = JSON.parse(localStorage.getItem("heroes")) || {};
+const initialState = JSON.parse(localStorage.getItem("heroes")) || {
+  heroes: [],
+  good: [],
+  bad: [],
+};
 
 let newHeroesArray;
 

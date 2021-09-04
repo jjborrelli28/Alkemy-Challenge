@@ -1,3 +1,5 @@
 # Alkemy Challenge
 
-### By Juan José Borrelli
+### App: https://alkemy-challenge-jjborrelli.netlify.app/
+
+### My LinkedIn: https://www.linkedin.com/in/jjborrelli/

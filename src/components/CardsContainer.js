@@ -11,6 +11,8 @@ export const CardsContainer = () => {
   return (
     <>
       <div className="row row-cols-2 row-cols-md-6 g-4 mt-1">
+
+
         {heroes.length < 6 && <EmptyCard />}
         {heroes.length === 0 && <TransparentCard />}
         {heroes.map((hero) => (
