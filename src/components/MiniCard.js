@@ -95,7 +95,7 @@ export const MiniCard = ({ hero }) => {
       <div className="btn-container-mini-card">
         <button
           type="button"
-          className="btn btn-outline-primary"
+          className="btn btn-primary btn-mini-card"
           style={{ textDecoration: "underline" }}
           id="TooltipAdd"
           onClick={handleSelect}
@@ -108,7 +108,7 @@ export const MiniCard = ({ hero }) => {
           target="TooltipAdd"
           toggle={toggleAdd}
         >
-          More info!
+          Add hero
         </Tooltip>
       </div>
     </div>

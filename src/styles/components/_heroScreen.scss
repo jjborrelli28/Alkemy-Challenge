@@ -1,0 +1,38 @@
+.card-hero {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-container {
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+}
+
+.info {
+  padding: 1rem;
+  width: 100%;
+}
+
+.btn-large {
+  width: 100%;
+}
+
+@media (max-width: 479px) {
+  .hero-container {
+    flex-direction: column;
+  }
+
+  .image {
+    img {
+      width: 100%;
+    }
+  }
+}

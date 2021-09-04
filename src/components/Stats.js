@@ -43,7 +43,7 @@ export const Stats = () => {
   });
 
   return (
-    <div className="mt-3">
+    <div className="mt-3 pb-3">
       <h1 className="display-6">Team Powerstats</h1>
       <ul className="powerstats">
         {numbers.map((number) => (

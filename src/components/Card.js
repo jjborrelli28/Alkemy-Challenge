@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { Tooltip } from "reactstrap";
 import { types } from "../types/types";
 
@@ -41,14 +42,15 @@ export const Card = ({ hero }) => {
             <li>Power: {hero.powerstats.power}</li>
             <li>Speed: {hero.powerstats.speed}</li>
           </ul>
-          <button
-            type="button"
-            className="btn btn-primary btn-more-info"
+          <NavLink
+            className="btn btn-info btn-more-info"
+            exact
+            to={`/hero/${hero.id}`}
             style={{ textDecoration: "underline" }}
             id="TooltipInfo"
           >
             <i className="fas fa-plus"></i>
-          </button>
+          </NavLink>
           <Tooltip
             placement="top"
             isOpen={tooltipInfoOpen}
@@ -57,7 +59,7 @@ export const Card = ({ hero }) => {
           >
             More info!
           </Tooltip>
-
+          <div></div>
           <button
             type="button"
             className="btn btn-danger btn-delete"

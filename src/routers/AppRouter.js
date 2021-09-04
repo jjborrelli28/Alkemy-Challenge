@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
-import { HomeScreen } from "../components/HomeScreen";
 import { LoginScreen } from "../components/LoginScreen";
+import { DashboardRoutes } from "./DashboardRoutes";
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
 
@@ -11,7 +11,7 @@ export const AppRouter = () => {
       <div>
         <Switch>
           <PublicRoute exact path="/login" component={LoginScreen} />
-          <PrivateRoute path="/" component={HomeScreen} />
+          <PrivateRoute path="/" component={DashboardRoutes} />
         </Switch>
       </div>
     </Router>
