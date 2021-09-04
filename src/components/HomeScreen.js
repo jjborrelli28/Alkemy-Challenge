@@ -1,29 +1,28 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-
-import { types } from "../types/types";
-import { ButtonLogout } from "./ButtonLogout";
+import { Button } from "./Button";
+import { CardsContainer } from "./CardsContainer";
 
 export const HomeScreen = () => {
-  const dispatch = useDispatch();
-  const { auth } = useSelector((state) => state.auth);
-
   return (
     <div className="home-screen">
-      <div class="jumbotron jumbotron-fluid mt-5">
-        <div class="container">
-          <h1 class="display-3">Alkemy Challenge</h1>
-          <p class="lead">Welcome to the Juan José Borrelli Challenge!</p>
-          <p class="lead">
-            Below you can see the Heroes team that he forms, which you can edit
-            to your liking.
+      <div className="jumbotron jumbotron-fluid mt-5">
+        <div className="container">
+          <h1 className="display-3">
+            <b>Alkemy Challenge</b>
+          </h1>
+          <p className="lead">
+            <b>Welcome to the Juan José Borrelli Challenge!</b>
           </p>
         </div>
-        <div class="container mt-5">
-          <h1 class="display-5">Heroes Team</h1>
+        <hr className="my-4" />
+        <div className="container mt-1">
+          <h1 className="display-5">
+            <b>Heroes Team</b>
+          </h1>
+          <CardsContainer />
         </div>
       </div>
-      <ButtonLogout />
+      <Button />
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { types } from "../types/types";
 
-export const ButtonLogout = () => {
+export const Button = () => {
   const dispatch = useDispatch();
 
   const handleLogout = (e) => {

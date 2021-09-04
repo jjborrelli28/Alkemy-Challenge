@@ -1,0 +1,28 @@
+.card {
+  position: relative;
+  justify-content: start;
+}
+
+.list {
+  li {
+    list-style: none;
+  }
+}
+
+.btn-more-info {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border-radius: 50%;
+}
+
+.btn-delete {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  border-radius: 50%;
+}
+
+.tooltip {
+  margin: 0.5rem;
+}
