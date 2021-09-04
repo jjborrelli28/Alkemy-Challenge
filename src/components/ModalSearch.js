@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import { useFormSearch } from "../hooks/useFormSearch";
 import { types } from "../types/types";
 import { MiniCard } from "./MiniCard";
 import { Spinner } from "./Spinner";
@@ -18,10 +17,8 @@ export const ModalSearch = (props) => {
       payload: "",
     };
     dispatch(action);
-    reset();
   };
 
-  const [values, handleInputChange, reset] = useFormSearch();
 
   const dispatch = useDispatch();
 
