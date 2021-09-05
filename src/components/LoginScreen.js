@@ -70,8 +70,3 @@ export const LoginScreen = () => {
     </div>
   );
 };
-
-/*
-User: challenge@alkemy.org
-Pass: react
-*/
