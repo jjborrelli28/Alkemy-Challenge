@@ -36,24 +36,31 @@ export const Stats = () => {
 
   const aHeight = Math.floor(height / heroes.length);
 
-  const numbers = [combat, durability, intelligence, power, speed];
+  const stats = [
+    { name: "Combat:", value: combat },
+    { name: "Durability:", value: durability },
+    { name: "Intelligence:", value: intelligence },
+    { name: "Power:", value: power },
+    { name: "Speed:", value: speed },
+  ];
 
-  numbers.sort((a, b) => {
-    return b - a;
+  stats.sort(function (a, b) {
+    if (a.value < b.value) {
+      return 1;
+    }
+    if (a.value > b.value) {
+      return -1;
+    }
+    return 0;
   });
-
+  console.log(stats);
   return (
     <div className="mt-3 pb-3">
       <h1 className="display-6">Team Powerstats</h1>
       <ul className="powerstats">
-        {numbers.map((number) => (
-          <li key={Math.random()}>
-            {(number === combat && "Combat") ||
-              (number === durability && "Durability") ||
-              (number === intelligence && "Intelligence") ||
-              (number === power && "Power") ||
-              (number === speed && "Speed")}
-            : {number}
+        {stats.map((stat) => (
+          <li key={stat.name}>
+            {stat.name} {stat.value}
           </li>
         ))}
         <li>Average weight: {aWeight} kg</li>
