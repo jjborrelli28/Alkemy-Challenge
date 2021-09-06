@@ -12,5 +12,7 @@
 ### Login data: 
 #### User: challenge@alkemy.org
 #### Password: react
+
 ---
+
 ### My LinkedIn: https://www.linkedin.com/in/jjborrelli/
