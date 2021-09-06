@@ -44,7 +44,7 @@ export const Stats = () => {
     { name: "Speed:", value: speed },
   ];
 
-  stats.sort(function (a, b) {
+  stats.sort((a, b) => {
     if (a.value < b.value) {
       return 1;
     }
@@ -53,7 +53,7 @@ export const Stats = () => {
     }
     return 0;
   });
-  console.log(stats);
+
   return (
     <div className="mt-3 pb-3">
       <h1 className="display-6">Team Powerstats</h1>
